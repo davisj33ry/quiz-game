@@ -1,3 +1,45 @@
+// Element Variables - Start Page
+const startPage = document.querySelector('#startPage');
+const startQuiz = document.getElementById('quizContainer');
+const startBtn = document.getElementById('startBtn')
+var currentQuestion = 0
+
+// Quiz Variables
+const questionEl = document.querySelector('#quesions'); 
+const answerEl = document.querySelector('answer');
+
+// // Start Timer
+// function startTimer() {
+//     if 
+// };
+
+//hide element
+function hide(element) {
+    element.style.display = "none";
+}
+
+//show element
+function show(element) {
+    element.style.display = "block";
+}
+
+//display quiz question
+function showQuestion() {
+    questionEl.textContent = questions[currentQuestion].question_1;
+    for (i = 0; i < answersEl.children.length; i++) {
+        answerEl.children[i].children[0].textContent = `${(i + 1)}: ${questions[currentQ].selection[i]}`;
+    }
+}
+
+//Start Quiz - Start Page
+startBtn.addEventListener("click", function() {
+    hide(startPage);
+    show(quizContainer);
+    showQuestion();
+});
+
+// Element Variables - Quiz
+
 var questions = [
     {
         question_1: "How many boroughs make up New York City?",

@@ -13,21 +13,39 @@
   </head>
   <body>
     <div class="container-mt-6">
-        <div class="row">
-            <div class="col-md-4 h2">High Scores</div>
-            <div class="col-md-2 ml-auto h2">Timer</div>
+      <div class="row">
+        <div class="col-md-4 h4">High Scores</div>
+        <div class="col-md-2 ml-auto h4">
+          Time Remaining: <span id="timer">0</span>
         </div>
+      </div>
     </div>
-    <div class="col-md-11 offset-md-3 align-items-center">
+    <div class="col-md-11 offset-md-3 align-items-center" id="startPage">
       <header class="h1 col-md-6 text-center">NYC Quiz Game</header>
       <p class="col-md-6 text-center">
         This is a quiz about all things New York City. <br />
         Try to answer each question before time runs out.<br />
-        If you answer a question incorrectly, <br>
+        If you answer a question incorrectly, <br />
         you'll lose 10 seconds. <br />
         Have fun!
       </p>
-      <button type="button" class="btn btn-outline-primary btn-lg col-md-6">Start</button>
+      <button
+        type="button"
+        class="btn btn-outline-primary btn-lg col-md-6"
+        id="startBtn"
+      >
+        Start
+      </button>
+    </div>
+    <div class="container" id="quizContainer" style="display: none">
+      <h5 class="h5 md-4" id="question"></h5>
+      <div class="btn-group-vertical col-md-12">
+        <button class="btn btn-outline-primary" type="button">Button</button>
+        <button class="btn btn-outline-primary" type="button">Button</button>
+        <button class="btn btn-outline-primary" type="button">Button</button>
+        <button class="btn btn-outline-primary" type="button">Button</button>
+      </div>
+      <div class="container" id="answer"></div>
     </div>
     <script src="./assets/js/script.js"></script>
   </body>
