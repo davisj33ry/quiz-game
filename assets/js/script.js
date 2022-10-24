@@ -3,6 +3,9 @@ const startPage = document.querySelector("#startPage");
 const startQuiz = document.getElementById("quizContainer");
 const startBtn = document.getElementById("startBtn");
 var currentQuestion = 0;
+var currentSelection = 0;
+var secondsElapsed = 0
+var score = 0;
 
 //Start Quiz - Start Page
 startBtn.addEventListener("click", function () {
@@ -68,8 +71,26 @@ var questions = [
 function showQuestion() {
   questionEl.textContent = questions[currentQuestion].mainQuestion;
   for (i = 0; i < selectionEl.children.length; i++) {
-    selectionEl.children[
-      i
-    ].children[0].textContent = `${questions[currentQuestion].selection[i]}`;
+    selectionEl.children[i].children[0].textContent = `${questions[currentQuestion].selection[i]}`;
   }
+}
+
+// check answer to question
+selectionEl.addEventListener("click", function(event) {
+    if (event.target.matches("button")) {
+        checkAnswer(event.target);
+        nextQuestion();
+    }
+}); 
+
+// check answer function
+function checkAnswer(answer) {
+    if (questions[currentQuestion].answer == questions[currentQuestion].selection[answer.id]) {
+        score += 1000;
+        alert("You got it dude!");
+    }
+    else {
+        secondsElapsed -= 10;
+        alert("Sorry, wrong answer");
+    }
 }
