@@ -14,7 +14,7 @@
   <body>
     <div class="container-mt-6">
       <div class="row">
-        <div class="col-md-4 h4">High Scores</div>
+        <div class="col-md-4 h4" id="showHighScores">High Scores</div>
         <div class="col-md-2 ml-auto h4">
           Time Remaining: <span id="timer">0</span>
         </div>
@@ -37,6 +37,7 @@
         Start
       </button>
     </div>
+    <!-- container for quiz main game -->
     <div class="container" id="quizContainer" style="display: none">
       <div>
         <h5 class="h5 md-4" id="question"></h5>
@@ -55,6 +56,14 @@
           <button class="btn btn-outline-primary btn-block" type="button" id="3"></button>
         </div>
       </div>
+    </div>
+    <!-- container for user score at end of game -->
+    <div class="container" style="display:none">Final Score: <span id="userFinalScore"></span></div>
+    <!-- container for high scores -->
+    <div class="container" id="highScores" style="display:none">
+        <div>scores</div>
+        <button>Start New Game</button>
+        <button>Reset High Scores</button>
     </div>
     <script src="./assets/js/script.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
